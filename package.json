@@ -1,0 +1,20 @@
+{
+  "name": "realworld",
+  "version": "1.0.0",
+  "description": "realworld example, a medium web application for share technicals",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kunuit/real-world.git"
+  },
+  "author": "kun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kunuit/real-world/issues"
+  },
+  "homepage": "https://github.com/kunuit/real-world#readme",
+  "private": true
+}
