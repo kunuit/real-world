@@ -4,6 +4,7 @@
   "description": "realworld example, a medium web application for share technicals",
   "main": "index.js",
   "scripts": {
+    "serve": "moleculer-runner --env --repl --hot services",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,8 @@
     "url": "https://github.com/kunuit/real-world/issues"
   },
   "homepage": "https://github.com/kunuit/real-world#readme",
-  "private": true
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
 }
