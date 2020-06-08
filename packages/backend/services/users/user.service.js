@@ -1,17 +1,28 @@
-const { SERVICE_USER } = require('../../constants')
+const { DbMixin } = require('../../mixins/knexdb.mixin')
+const { SERVICE_USER, TABLE_USER } = require('../../constants')
 
 
 module.exports = {
   name: SERVICE_USER,
+  mixins: [],
   actions: {
-    sum: {
+    getAllUsers: {
+      cache: {
+        keys: ['active']
+      },
       params: {
-        num1: 'string',
-        num2: 'string'
+        active: {
+          type: 'string',
+          optional: true
+        }
       },
       handler(ctx) {
-        const { num1, num2 } = ctx.params
-        return parseInt(num1) + parseInt(num2);
+        // ctx as same req.body - req.params
+        const { active } = ctx.params
+        // console.log(active)
+        return ctx.call(`db-${TABLE_USER}.find`, { 
+          where: { actFlg: active == 'true'}
+        })
       }
     }
   }

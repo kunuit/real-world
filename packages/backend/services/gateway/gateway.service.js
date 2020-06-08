@@ -1,5 +1,5 @@
 const ApiGateway = require('moleculer-web')
-const { SERVICE_USER } = require('../../constants')
+const { SERVICE_USER,TABLE_USER } = require('../../constants')
 
 module.exports = {
   mixins: [ApiGateway],
@@ -8,10 +8,10 @@ module.exports = {
       {
         port: 3000,
         path: "/api",
-        authentication: true,
-        autoAliases: true,
+        authentication: false,
+        autoAliases: false,
         aliases: {
-          'GET /sum': `${SERVICE_USER}.sum`,
+          'GET /user': `${TABLE_USER}.getAllUsers`
         },
 
         // Disable to call not-mapped actions
