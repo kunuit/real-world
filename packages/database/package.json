@@ -6,7 +6,8 @@
   "author": "kun",
   "license": "MIT",
   "scripts": {
-    "migrate": "export NODE_ENV=development && knex migrate:latest"
+    "migrate": "export NODE_ENV=development && knex migrate:latest",
+    "rollback": "export NODE_ENV=development && knex migrate:rollback"
   },
   "dependencies": {
     "dotenv": "^8.2.0",

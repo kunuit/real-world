@@ -1,5 +1,5 @@
 const ApiGateway = require('moleculer-web')
-const { SERVICE_USER,TABLE_USER } = require('../../constants')
+const { SERVICE_USER,TABLE_USER,TABLE_ADMIN } = require('../../constants')
 
 module.exports = {
   mixins: [ApiGateway],
@@ -11,7 +11,8 @@ module.exports = {
         authentication: false,
         autoAliases: false,
         aliases: {
-          'GET /user': `${TABLE_USER}.getAllUsers`
+          'GET /user/:active': `${TABLE_USER}.getAllUsers`,
+          'POST /admin': `${TABLE_ADMIN}.createAd`
         },
 
         // Disable to call not-mapped actions

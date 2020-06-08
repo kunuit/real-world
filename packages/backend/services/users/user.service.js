@@ -6,7 +6,7 @@ module.exports = {
   name: SERVICE_USER,
   mixins: [],
   actions: {
-    getAllUsers: {
+    getAllUsersByActive: {
       cache: {
         keys: ['active']
       },
@@ -19,7 +19,7 @@ module.exports = {
       handler(ctx) {
         // ctx as same req.body - req.params
         const { active } = ctx.params
-        // console.log(active)
+        console.log(active)
         return ctx.call(`db-${TABLE_USER}.find`, { 
           where: { actFlg: active == 'true'}
         })
